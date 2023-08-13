@@ -7,13 +7,11 @@
 
 int main(void)
 {
-	char ch = 'x';
+	char h;
 
-	for (ch = 'a'; ch <= 'z'; ch++)
-		if (ch != 'e' && ch != 'q')
-	{
-		putchar (ch);
-	}
+	for (h = 'a' ; h <= 'z'; h++)
+		if (h != 'e' && h != 'q')
+			putchar (h);
 	putchar('\n');
 	return (0);
 }
