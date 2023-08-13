@@ -16,7 +16,7 @@ int main(void)
 		}
 		else
 		{
-			putchar (ch - 10 +'a');
+		putchar (ch - 10 +'a');
 		}
 	putchar('\n');
 	return (0);
