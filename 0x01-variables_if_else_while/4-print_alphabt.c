@@ -1,13 +1,14 @@
-#include<stdio>
+#include<stdio.h>
 
 /**
- * main - Entry point of main function
- * Return: always 0
+ *  main - Entry point
+ *  putchar: prints the output to the screen
+ *  Return: always 0
  */
 
 int main(void)
 {
-	char ch = 'x';
+	char ch;
 
 	for (ch = 'a'; ch <= 'z'; ch++)
 		if (ch != 'e' && ch != 'q')
