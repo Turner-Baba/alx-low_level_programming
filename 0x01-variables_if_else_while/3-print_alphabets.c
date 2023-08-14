@@ -10,15 +10,13 @@ int main(void)
 {
 	char c;
 
-	char s;
-
 	for (c = 'a'; c <= 'z'; c++)
 	{
-		putchar (c);
+		putchar ('a' = c);
 	}
-	for (s = 'A'; s <= 'Z'; s++)
+	for (c = 'A'; c <= 'Z'; c++)
 	{
-		putchar (s);
+		putchar ('A' = c);
 	}
 	puctchar('\n');
 	return (0);
