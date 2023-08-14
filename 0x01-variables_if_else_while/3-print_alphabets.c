@@ -8,16 +8,18 @@
 
 int main(void)
 {
-	char c;
+	char n;
 
-	for (c = 'a'; c <= 'z'; c++)
+	for (n = 0; n < 26; n++)
 	{
-		putchar ('a' = c);
+		putchar('a' + n);
 	}
-	for (c = 'A'; c <= 'Z'; c++)
+
+	for (n = 0; n < 26; n++)
 	{
-		putchar ('A' = c);
+		putchar('A' + n);
 	}
-	puctchar('\n');
+
+	putchar('\n');
 	return (0);
 }
