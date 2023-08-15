@@ -1,16 +1,17 @@
-#include <unistd.h>
+#include <main.h>
 /**
  * main - Entry point
  * Return: always 0
 
 int main(void)
 {
-	char n = _putchar;
-	while (n = _putchar)
-	{
-		write(_putchar);
-	}
-
-	write("_putchar\n");
-	return (0);
+_putchar('_');
+_putchar('p');
+_putchar('u');
+_putchar('t');
+_putchar('c');
+_putchar('h');
+_putchar('a');
+_putchar('r');
+return (0);
 }
