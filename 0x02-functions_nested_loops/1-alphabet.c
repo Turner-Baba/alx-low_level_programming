@@ -1,7 +1,6 @@
 #include "main.h"
 /**
- * main - Entry point of my code
- * funtion name: print_alphabet
+ * print_alphabet - Entry point of my code
  * Return: void
  */
 
