@@ -37,5 +37,5 @@ int is_palindrome(char *s)
 {
 	if (*s == '\0')
 		return (1);
-	return (compare_string(s, 0, strlen_recursion(s) -1));
+	return (compare_string(s, 0, strlen_recursion(s) - 1));
 }
