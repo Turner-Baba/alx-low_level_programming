@@ -23,6 +23,6 @@ int sqrt_operator(int i, int j)
  * Return: natural square root of n
  */
 int _sqrt_recursion(int n)
-{ 
+{
 	return (sqrt_operator(n, 0));
 }
