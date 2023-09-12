@@ -1,9 +1,13 @@
-#ifndef DOG_H
-#define DOG_H
+#ifndef _DOG_H_
+#define _DOG_H_
 /**
- * file: struct dog
+ * struct dog - struct that creates dog informations
+ * @name: the name of the dog
+ * @owner: the owner of the dog
+ * @age: the age of the dog
  * Description: struct declaration
  */
+
 struct dog
 {
 	char *name;
