@@ -42,7 +42,7 @@ void print_all(const char * const format, ...)
 		}
 		if (format[i + 1] != '\0' && check_stat == 0) /* if not NULL */
 			printf(", ");
-		i++;
+		i++; /* update step of var */
 	}
 	printf("\n");
 	va_end(ptr); /* end */
