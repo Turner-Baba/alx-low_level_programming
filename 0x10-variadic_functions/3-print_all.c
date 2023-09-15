@@ -1,49 +1,50 @@
 #include "variadic_functions.h"
+
+
 /**
- * print_all - prints any argument
- * @format: argument specifier
- *
- * Return: argument given based on format
+ * print_all - print all types of data followed by a new line
+ * @format: the data types
+ * Return: nothing
  */
+
 void print_all(const char * const format, ...)
 {
-	int i, check_stat; /* declaration of variables */
+	va_list args;
+	int z = 0, x = 0;
 	char *str;
-	va_list ptr;
+	char *sep = ", ";
 
-	va_start(ptr, format); /* initializes varibla */
-
-	i = 0;
-	while (format != NULL && format[i] != '\0')
+	va_start(args, format);
+	while (format && format[z])
+		z++;
+	while (format && format[x])
 	{
-		switch (format[i])
+		if (x  == (z - 1))
 		{
-			case 'i':
-				printf("%d", va_arg(ptr, int));
-				check_stat = 0; /* check if condition is met */
-				break;
-			case 'f':
-				printf("%f", va_arg(ptr, double));
-				check_stat = 0;
-				break;
-			case 'c':
-				printf("%c", va_arg(ptr, int));
-				check_stat = 0;
-				break;
-			case 's':
-				str = va_arg(ptr, char *);
-				if (str == NULL)
-					str = "(nil)";
-				printf("%s", str);
-				break;
-			default:
-				check_stat = 1;
-				break;
+			sep = "";
 		}
-		if (format[i + 1] != '\0' && check_stat == 0) /* if not NULL */
-			printf(", ");
-		i++; /* update step of var */
+		switch (format[x])
+		{
+		case 'c':
+			printf("%c%s", va_arg(args, int), sep);
+			break;
+		case 'i':
+			printf("%d%s", va_arg(args, int), sep);
+			break;
+		case 'f':
+			printf("%f%s", va_arg(args, double), sep);
+			break;
+		case 's':
+			str = va_arg(args, char *);
+			if (str == NULL)
+			{
+				str = "(nil)";
+			}
+			printf("%s%s", str, sep);
+			break;
+		}
+		x++;
 	}
 	printf("\n");
-	va_end(ptr); /* end */
+	va_end(args);
 }
