@@ -11,7 +11,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned long int ct;
 
 	result = n ^ m;
-	for (ct = 0; result > 0;)
+	for (ct = 0; result > 0)
 	{
 		if ((result & 1) == 1)
 			ct++;
