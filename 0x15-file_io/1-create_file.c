@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * create_file - a function that creates a file
- * @filename - the filename
+ * @filename: the filename
  * @text_content: NULL terminated string to write to the file
  * Return: (1) if successful else (-1)
  */
@@ -9,7 +9,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd;
 	int nletters;
-	int rwr;
+	int rw;
 
 	if (!filename)
 		return (-1);
@@ -24,9 +24,9 @@ int create_file(const char *filename, char *text_content)
 
 	for (nletters = 0; text_content[nletters]; nletters++)
 		;
-	rwr= write(fd, text_content, nletters);
+	rw = write(fd, text_content, nletters);
 
-	if (rwr == -1)
+	if (rw == -1)
 		return (-1);
 	close(fd);
 
