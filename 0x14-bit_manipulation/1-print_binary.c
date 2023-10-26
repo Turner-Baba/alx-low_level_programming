@@ -1,32 +1,15 @@
 #include "main.h"
 /**
- * b_print - prints binary rep of a number
- * @n: input
- * Return: void
- */
-void b_print(unsigned int n)
-{
-	if (n == 0)
-		return;
-	b_print(n >> 1);
-	if ((n & 1) == 1)
-		_putchar('1');
-	if ((n & 1) == 0)
-		_putchar('0');
-}
-
-/**
  * print_binary - prints binary rep of a number
  * @n: input decimal
  * Return: void
  */
 void print_binary(unsigned long int n)
 {
-	if (n == 0)
-		_putchar('0');
+	size_t b_number;
 
-	else
-	{
-		b_print(n);
-	}
+	if (n >> 1)
+		print_binary(n >> 1);
+	b_number = n & 1;
+	_putchar(b_number + 48);
 }
