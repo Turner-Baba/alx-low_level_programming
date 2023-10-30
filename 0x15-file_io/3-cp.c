@@ -30,13 +30,13 @@ void _errorhandler(int file_from, int file_to, char *argv[])
  */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to;
+	int file_from, file_to, close_error;
 	ssize_t n, ch;
 	char  buffs[1024];
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%s\n", "Usuage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 		exit(97);
 	}
 	file_from = open(argv[1], O_RDONLY);
@@ -54,15 +54,16 @@ int main(int argc, char *argv[])
 		if (ch == -1)
 			_errorhandler(0, -1, argv);
 	}
-
-	if (close(file_from) == -1)
+	close_error = close(file_from);
+	if (close_error == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
-	if (close(file_to) == -1)
+	close_error = close(file_to);
+	if (close_error == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
 
