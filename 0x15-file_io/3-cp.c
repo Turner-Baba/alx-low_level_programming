@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "%s\n", "Usuage: cp file_from file_to");
 		exit(97);
 	}
-	file_from = open(argv[1], O_WRONLY);
+	file_from = open(argv[1], O_RDONLY);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	_errorhandler(file_from, file_to, argv);
 
